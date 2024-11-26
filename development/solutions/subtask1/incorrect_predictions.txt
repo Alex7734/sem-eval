@@ -1,0 +1,365 @@
+Article ID: EN_UA_021263.txt
+Entity Mention: Fetterman
+True Label: Virtuous
+Predicted Label: Victim
+
+Article ID: EN_UA_021123.txt
+Entity Mention: United States
+True Label: Martyr
+Predicted Label: Victim
+
+Article ID: EN_UA_013727.txt
+Entity Mention: NATO
+True Label: Tyrant
+Predicted Label: Victim
+
+Article ID: EN_UA_013727.txt
+Entity Mention: Vladimir Putin
+True Label: Tyrant
+Predicted Label: Victim
+
+Article ID: EN_UA_026697.txt
+Entity Mention: von der Leyen
+True Label: Corrupt
+Predicted Label: Victim
+
+Article ID: EN_UA_027879.txt
+Entity Mention: the West
+True Label: Foreign Adversary
+Predicted Label: Victim
+
+Article ID: EN_UA_103011.txt
+Entity Mention: Shell
+True Label: Corrupt
+Predicted Label: Victim
+
+Article ID: EN_UA_014413.txt
+Entity Mention: GRU
+True Label: Spy
+Predicted Label: Victim
+
+Article ID: EN_UA_022016.txt
+Entity Mention: Ukraine
+True Label: Rebel
+Predicted Label: Victim
+
+Article ID: EN_CC_200021.txt
+Entity Mention: Adams
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_UA_000923.txt
+Entity Mention: Germany
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_CC_100004.txt
+Entity Mention: ete Buttigieg
+True Label: Deceiver
+Predicted Label: Victim
+
+Article ID: EN_UA_012803.txt
+Entity Mention: Vladimir Putin
+True Label: Deceiver
+Predicted Label: Victim
+
+Article ID: EN_UA_000923.txt
+Entity Mention: EU
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_UA_017831.txt
+Entity Mention: Mike Pence
+True Label: Traitor
+Predicted Label: Victim
+
+Article ID: EN_CC_100012.txt
+Entity Mention: Bill Gates-
+True Label: Conspirator
+Predicted Label: Victim
+
+Article ID: EN_UA_103732.txt
+Entity Mention: Zelensky
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_CC_100136.txt
+Entity Mention: Daily Stormer
+True Label: Bigot
+Predicted Label: Victim
+
+Article ID: EN_UA_103403.txt
+Entity Mention: Moscow
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_UA_002416.txt
+Entity Mention: Meta's
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_UA_103517.txt
+Entity Mention: Putin
+True Label: Tyrant
+Predicted Label: Victim
+
+Article ID: EN_UA_013257.txt
+Entity Mention: Russia
+True Label: Virtuous
+Predicted Label: Victim
+
+Article ID: EN_UA_015962.txt
+Entity Mention: Vyacheslav Gladkov
+True Label: Guardian
+Predicted Label: Victim
+
+Article ID: EN_UA_025652.txt
+Entity Mention: the West
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_CC_100076.txt
+Entity Mention: Reuters
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_UA_013617.txt
+Entity Mention: China
+True Label: Virtuous
+Predicted Label: Victim
+
+Article ID: EN_UA_019640.txt
+Entity Mention: China
+True Label: Guardian
+Predicted Label: Victim
+
+Article ID: EN_UA_103011.txt
+Entity Mention: BP
+True Label: Corrupt
+Predicted Label: Victim
+
+Article ID: EN_UA_024847.txt
+Entity Mention: United States
+True Label: Conspirator
+Predicted Label: Victim
+
+Article ID: EN_UA_002531.txt
+Entity Mention: Klitschko
+True Label: Martyr
+Predicted Label: Victim
+
+Article ID: EN_UA_103995.txt
+Entity Mention: Yahya al-Sinwar
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_UA_001032.txt
+Entity Mention: Joe Biden
+True Label: Guardian
+Predicted Label: Victim
+
+Article ID: EN_UA_027787.txt
+Entity Mention: the United States
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_UA_029053.txt
+Entity Mention: Keir Starmer
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_UA_027676.txt
+Entity Mention: Putin
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_UA_104434.txt
+Entity Mention: Putin
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_UA_103861.txt
+Entity Mention: Chinese
+True Label: Spy
+Predicted Label: Victim
+
+Article ID: EN_CC_100038.txt
+Entity Mention: the Fed
+True Label: Tyrant
+Predicted Label: Victim
+
+Article ID: EN_CC_100004.txt
+Entity Mention: Al Gore
+True Label: Deceiver
+Predicted Label: Victim
+
+Article ID: EN_UA_026740.txt
+Entity Mention: South Africa
+True Label: Peacemaker
+Predicted Label: Victim
+
+Article ID: EN_UA_024050.txt
+Entity Mention: Ukraine
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_UA_100688.txt
+Entity Mention: Kremlin
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_UA_010909.txt
+Entity Mention: John Kerry
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_CC_100012.txt
+Entity Mention: Dr. Carol Baker
+True Label: Conspirator
+Predicted Label: Victim
+
+Article ID: EN_UA_008072.txt
+Entity Mention: Putin
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_UA_013617.txt
+Entity Mention: Iran
+True Label: Virtuous
+Predicted Label: Victim
+
+Article ID: EN_UA_026697.txt
+Entity Mention: Jourova
+True Label: Corrupt
+Predicted Label: Victim
+
+Article ID: EN_UA_004616.txt
+Entity Mention: Russians
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_UA_024628.txt
+Entity Mention: Germany
+True Label: Guardian
+Predicted Label: Victim
+
+Article ID: EN_UA_002531.txt
+Entity Mention: Russian forces
+True Label: Saboteur
+Predicted Label: Victim
+
+Article ID: EN_UA_022051.txt
+Entity Mention: Kiev
+True Label: Foreign Adversary
+Predicted Label: Victim
+
+Article ID: EN_UA_013257.txt
+Entity Mention: Western countries
+True Label: Saboteur
+Predicted Label: Victim
+
+Article ID: EN_UA_008586.txt
+Entity Mention: US
+True Label: Tyrant
+Predicted Label: Victim
+
+Article ID: EN_UA_012611.txt
+Entity Mention: Norway
+True Label: Conspirator
+Predicted Label: Victim
+
+Article ID: EN_UA_024050.txt
+Entity Mention: German generals
+True Label: Incompetent
+Predicted Label: Victim
+
+Article ID: EN_UA_100411.txt
+Entity Mention: Blinken
+True Label: Deceiver
+Predicted Label: Victim
+
+Article ID: EN_UA_027879.txt
+Entity Mention: Russia
+True Label: Guardian
+Predicted Label: Victim
+
+Article ID: EN_CC_100005.txt
+Entity Mention: COP27
+True Label: Corrupt
+Predicted Label: Victim
+
+Article ID: EN_UA_025165.txt
+Entity Mention: Kiev
+True Label: Underdog
+Predicted Label: Victim
+
+Article ID: EN_UA_002531.txt
+Entity Mention: Klitschko
+True Label: Virtuous
+Predicted Label: Victim
+
+Article ID: EN_UA_025764.txt
+Entity Mention: Russia
+True Label: Foreign Adversary
+Predicted Label: Victim
+
+Article ID: EN_UA_002531.txt
+Entity Mention: Russian invaders
+True Label: Terrorist
+Predicted Label: Victim
+
+Article ID: EN_UA_002531.txt
+Entity Mention: Russian military
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_UA_000923.txt
+Entity Mention: Britain
+True Label: Virtuous
+Predicted Label: Victim
+
+Article ID: EN_UA_024847.txt
+Entity Mention: Ukraine
+True Label: Conspirator
+Predicted Label: Victim
+
+Article ID: EN_UA_008586.txt
+Entity Mention: Brussels
+True Label: Tyrant
+Predicted Label: Victim
+
+Article ID: EN_UA_027676.txt
+Entity Mention: North Korea
+True Label: Foreign Adversary
+Predicted Label: Victim
+
+Article ID: EN_UA_104859.txt
+Entity Mention: GUR
+True Label: Terrorist
+Predicted Label: Victim
+
+Article ID: EN_UA_019640.txt
+Entity Mention: West
+True Label: Foreign Adversary
+Predicted Label: Victim
+
+Article ID: EN_UA_029155.txt
+Entity Mention: US Navy
+True Label: Saboteur
+Predicted Label: Victim
+
+Article ID: EN_UA_102990.txt
+Entity Mention: Russia
+True Label: Scapegoat
+Predicted Label: Victim
+
+Article ID: EN_UA_026142.txt
+Entity Mention: Scholz
+True Label: Instigator
+Predicted Label: Victim
+
+Article ID: EN_UA_026142.txt
+Entity Mention: Zionist
+True Label: Bigot
+Predicted Label: Victim
+
