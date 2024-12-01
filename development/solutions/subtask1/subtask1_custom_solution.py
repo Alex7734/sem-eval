@@ -2,12 +2,13 @@ from transformers import BertTokenizer, BertModel
 import torch
 import torch.nn as nn
 import numpy as np
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, f1_score, hamming_loss
+from sklearn.metrics import accuracy_score, classification_report, f1_score, hamming_loss
 import os
-import csv
+from data_parsing_subtask1 import extract_context, load_data
+from dataset import RoleDataset
 
 FINE_GRAINED_ROLES = [
     'Guardian', 'Martyr', 'Peacemaker', 'Rebel', 'Underdog', 'Virtuous', 'Instigator',
@@ -15,113 +16,81 @@ FINE_GRAINED_ROLES = [
     'Incompetent', 'Terrorist', 'Deceiver', 'Bigot', 'Forgotten', 'Exploited', 'Victim', 'Scapegoat'
 ]
 
-train_file = "../../data/EN/subtask-1-annotations.txt"
-article_folder = "../../data/EN/subtask-1-documents"
-model_dir = "./saved_model"
+train_file = r"D:\alex_mihoc\sem-eval\development\data\EN\subtask-1-annotations.txt"
+article_folder = r"D:\alex_mihoc\sem-eval\development\data\EN\subtask-1-documents"
+model_dir = r"D:\alex_mihoc\sem-eval\development\saved_model"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
 
 class EnhancedBertForMultiLabelClassification(nn.Module):
     def __init__(self, num_labels):
         super(EnhancedBertForMultiLabelClassification, self).__init__()
         self.bert = BertModel.from_pretrained("bert-base-uncased")
-        self.dropout = nn.Dropout(0.3)
-        self.classifier = nn.Linear(self.bert.config.hidden_size, num_labels)
+        self.dropout = nn.Dropout(p=0.3)
+        self.output_layer = nn.Linear(self.bert.config.hidden_size, num_labels)
 
     def forward(self, input_ids, attention_mask, labels=None):
         outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
-        logits = self.classifier(self.dropout(outputs.pooler_output))
+        pooled_output = self.dropout(outputs.pooler_output)
+        logits = self.output_layer(pooled_output)
         loss = None
         if labels is not None:
-            loss = nn.BCEWithLogitsLoss()(logits, labels)
+            loss_fn = FocalLoss()
+            loss = loss_fn(logits, labels)
         return loss, torch.sigmoid(logits)
 
 
-def load_data(file_path):
-    data = []
-    labels = []
-    with open(file_path, encoding='utf-8') as f:
-        reader = csv.reader(f, delimiter='\t')
-        for row in reader:
-            if len(row) < 5:
-                continue
-            article_id, entity_mention, start_offset, end_offset, main_role, *fine_grained_roles = row
-            data.append((article_id, entity_mention, start_offset, end_offset))
-            labels.append(fine_grained_roles)
-    return data, labels
+class FocalLoss(nn.Module):
+    def __init__(self, alpha=1, gamma=2):
+        super(FocalLoss, self).__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+
+    def forward(self, logits, targets):
+        bce_loss = nn.functional.binary_cross_entropy_with_logits(logits, targets, reduction="none")
+        probas = torch.sigmoid(logits)
+        pt = targets * probas + (1 - targets) * (1 - probas)
+        focal_loss = self.alpha * (1 - pt) ** self.gamma * bce_loss
+        return focal_loss.mean()
 
 
-def extract_context(article_path, start_offset, end_offset):
-    with open(article_path, encoding="utf-8") as f:
-        lines = f.readlines()
-        content = " ".join([line.strip() for line in lines if line.strip()])
-    return content[int(start_offset):int(end_offset)]
-
-
-class RoleDataset(Dataset):
-    def __init__(self, contexts, labels, tokenizer, max_len=512):
-        self.contexts = contexts
-        self.labels = labels
-        self.tokenizer = tokenizer
-        self.max_len = max_len
-
-    def __len__(self):
-        return len(self.contexts)
-
-    def __getitem__(self, idx):
-        encodings = self.tokenizer(
-            self.contexts[idx],
-            max_length=self.max_len,
-            truncation=True,
-            padding="max_length",
-            return_tensors="pt",
-        )
-        return {
-            "input_ids": encodings["input_ids"].squeeze(),
-            "attention_mask": encodings["attention_mask"].squeeze(),
-            "labels": torch.tensor(self.labels[idx], dtype=torch.float),
-        }
-
-
-def train_model(model, dataloader, optimizer, criterion, device, epoch):
+def train_model(model, dataloader, optimizer, scheduler, device):
     model.train()
     total_loss = 0
-    for batch_id, batch in enumerate(dataloader):
+    for batch in dataloader:
         optimizer.zero_grad()
         input_ids = batch["input_ids"].to(device)
         attention_mask = batch["attention_mask"].to(device)
         labels = batch["labels"].to(device)
-
-        _, logits = model(input_ids=input_ids, attention_mask=attention_mask)
-
-        loss = criterion(logits, labels)
+        loss, _ = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
         total_loss += loss.item()
-
         loss.backward()
         optimizer.step()
-
-        print(f"Epoch {epoch + 1}, Batch {batch_id + 1}/{len(dataloader)}, Loss: {loss.item():.4f}")
-    
+    scheduler.step(total_loss)
     return total_loss / len(dataloader)
 
 
-def evaluate_model(model, dataloader, device):
+def evaluate_model(model, dataloader, device, threshold=0.5):
     model.eval()
-    all_predictions = []
-    all_labels = []
+    all_predictions, all_labels = [], []
     with torch.no_grad():
         for batch in dataloader:
-            inputs = {
-                "input_ids": batch["input_ids"].to(device),
-                "attention_mask": batch["attention_mask"].to(device),
-            }
+            input_ids = batch["input_ids"].to(device)
+            attention_mask = batch["attention_mask"].to(device)
             labels = batch["labels"].to(device)
-            _, predictions = model(**inputs)
+            _, predictions = model(input_ids=input_ids, attention_mask=attention_mask)
             all_predictions.extend(predictions.cpu().numpy())
             all_labels.extend(labels.cpu().numpy())
-    return np.array(all_predictions), np.array(all_labels)
 
+    predictions = np.array(all_predictions)
+    labels = np.array(all_labels)
+
+    predicted_labels = (predictions >= threshold).astype(int)
+
+    for i, idx in enumerate(np.argmax(predictions, axis=1)):
+        predicted_labels[i, idx] = 1
+
+    return predicted_labels, labels
 
 def main():
     print("Loading training data...")
@@ -130,10 +99,7 @@ def main():
     mlb = MultiLabelBinarizer(classes=FINE_GRAINED_ROLES)
     labels = mlb.fit_transform(labels)
 
-    train_data, test_data, train_labels, test_labels = train_test_split(
-        data, labels, test_size=0.2, random_state=42
-    )
-
+    train_data, test_data, train_labels, test_labels = train_test_split(data, labels, test_size=0.2, random_state=42)
     tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
     train_contexts = [
@@ -151,58 +117,54 @@ def main():
     test_dataset = RoleDataset(test_contexts, test_labels, tokenizer)
     test_loader = DataLoader(test_dataset, batch_size=16, shuffle=False)
 
-    if os.path.exists(os.path.join(model_dir, "model.pt")):
-        print(f"Loading saved model from {model_dir}")
-        model = EnhancedBertForMultiLabelClassification(num_labels=len(FINE_GRAINED_ROLES))
-        model.load_state_dict(torch.load(os.path.join(model_dir, "model.pt")))
-        model.to(device)
+    print("\nInitializing Model...")
+    model = EnhancedBertForMultiLabelClassification(num_labels=len(FINE_GRAINED_ROLES))
+    model.to(device)
+
+    model_path = os.path.join(model_dir, "model.pt")
+    if os.path.exists(model_path):
+        print(f"Loading saved model from {model_path}")
+        model.load_state_dict(torch.load(model_path, map_location=device))
     else:
         print("Training a new model...")
-        class_counts = np.sum(train_labels, axis=0)
-        class_weights = 1.0 / (class_counts + 1e-6)
-        class_weights_tensor = torch.tensor(class_weights, dtype=torch.float).to(device)
-        criterion = nn.BCEWithLogitsLoss(pos_weight=class_weights_tensor)
-
-        model = EnhancedBertForMultiLabelClassification(num_labels=len(FINE_GRAINED_ROLES))
-        model.to(device)
-
         optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
-        epochs = 10
+        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="min", patience=2, factor=0.1)
 
-        for epoch in range(epochs):
-            train_loss = train_model(model, train_loader, optimizer, criterion, device, epoch)
-            print(f"Epoch {epoch + 1}/{epochs}, Loss: {train_loss:.4f}")
+        print("Training Model...")
+        for epoch in range(100):
+            train_loss = train_model(model, train_loader, optimizer, scheduler, device)
+            print(f"Epoch {epoch + 1}: Training Loss = {train_loss:.4f}")
 
-        if not os.path.exists(model_dir):
-            os.makedirs(model_dir)
-        torch.save(model.state_dict(), os.path.join(model_dir, "model.pt"))
-        print(f"Model saved to {model_dir}")
+        os.makedirs(model_dir, exist_ok=True)
+        torch.save(model.state_dict(), model_path)
+        print(f"Model saved to {model_path}")
 
-    predictions, true_labels = evaluate_model(model, test_loader, device)
+    print("\nEvaluating Model...")
+    predictions, true_labels = evaluate_model(model, test_loader, device, threshold=0.5)
 
-    most_confident_indices = np.argmax(predictions, axis=1)
-    most_confident_labels = [FINE_GRAINED_ROLES[idx] for idx in most_confident_indices]
+    true_labels_decoded = mlb.inverse_transform(true_labels)
+    predicted_labels_decoded = mlb.inverse_transform(predictions)
 
-    true_labels_single = [
-        label[0] if len(label) > 0 else "Unknown" for label in mlb.inverse_transform(true_labels)
-    ]
-
-    accuracy = accuracy_score(true_labels_single, most_confident_labels)
-    f1 = f1_score(true_labels_single, most_confident_labels, average="weighted")
-    hamming = hamming_loss(true_labels_single, most_confident_labels)
+    print("\nCalculating Metrics...")
+    accuracy = accuracy_score(true_labels, predictions)
+    f1 = f1_score(true_labels, predictions, average="weighted")
+    hamming = hamming_loss(true_labels, predictions)
 
     print(f"Accuracy: {accuracy * 100:.2f}%")
-    print(f"F1 Score: {f1:.4f}")
+    print(f"Weighted F1 Score: {f1:.4f}")
     print(f"Hamming Loss: {hamming:.4f}")
+    print("\nClassification Report:")
+    print(classification_report(true_labels, predictions, target_names=FINE_GRAINED_ROLES))
 
+    print("\nSaving Incorrect Predictions...")
     incorrect_predictions = []
     for article_id, entity_mention, true_label, predicted_label in zip(
         [d[0] for d in test_data],
         [d[1] for d in test_data],
-        true_labels_single,
-        most_confident_labels,
+        true_labels_decoded,
+        predicted_labels_decoded,
     ):
-        if true_label != predicted_label:
+        if set(true_label) != set(predicted_label):
             incorrect_predictions.append(
                 f"Article ID: {article_id}\n"
                 f"Entity Mention: {entity_mention}\n"
@@ -213,9 +175,8 @@ def main():
     with open("incorrect_predictions.txt", "w", encoding="utf-8") as f:
         f.writelines(incorrect_predictions)
 
-    print("Incorrect predictions saved to 'incorrect_predictions.txt'.")
+    print(f"Number of Incorrect Predictions: {len(incorrect_predictions)}")
 
 
 if __name__ == "__main__":
     main()
-
