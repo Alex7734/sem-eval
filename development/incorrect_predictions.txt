@@ -1,320 +1,532 @@
 Article ID: EN_UA_021263.txt
 Entity Mention: Fetterman
-True Label: ('Virtuous',)
-Predicted Label: ('Martyr',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Virtuous']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_021123.txt
 Entity Mention: United States
-True Label: ('Martyr',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Martyr']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
+
+Article ID: EN_UA_013727.txt
+Entity Mention: NATO
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Tyrant']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_013257.txt
 Entity Mention: Russia
-True Label: ('Victim',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_013727.txt
 Entity Mention: Vladimir Putin
-True Label: ('Tyrant',)
-Predicted Label: ('Virtuous',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Tyrant']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_026697.txt
 Entity Mention: von der Leyen
-True Label: ('Corrupt',)
-Predicted Label: ('Conspirator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Corrupt']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
+
+Article ID: EN_UA_027879.txt
+Entity Mention: the West
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Foreign Adversary']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_103011.txt
 Entity Mention: Shell
-True Label: ('Corrupt',)
-Predicted Label: ('Deceiver',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Corrupt']
+Predicted Fine-Grained Roles: ['Instigator']
 
 Article ID: EN_UA_014413.txt
 Entity Mention: GRU
-True Label: ('Spy',)
-Predicted Label: ('Conspirator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Spy']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_026697.txt
 Entity Mention: Slovak Prime Minister Robert Fico
-True Label: ('Victim',)
-Predicted Label: ('Tyrant',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_028103.txt
 Entity Mention: Armin Papperger
-True Label: ('Victim',)
-Predicted Label: ('Guardian',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_022016.txt
 Entity Mention: Ukraine
-True Label: ('Rebel',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Rebel']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_CC_200021.txt
 Entity Mention: Adams
-True Label: ('Incompetent',)
-Predicted Label: ('Tyrant',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_000923.txt
 Entity Mention: Germany
-True Label: ('Incompetent',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_CC_100004.txt
 Entity Mention: ete Buttigieg
-True Label: ('Deceiver',)
-Predicted Label: ('Incompetent',)
-
-Article ID: EN_UA_012803.txt
-Entity Mention: Vladimir Putin
-True Label: ('Deceiver',)
-Predicted Label: ('Incompetent',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Deceiver']
+Predicted Fine-Grained Roles: ['Incompetent']
 
 Article ID: EN_UA_000923.txt
 Entity Mention: EU
-True Label: ('Incompetent',)
-Predicted Label: ('Guardian',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_017831.txt
 Entity Mention: Mike Pence
-True Label: ('Traitor',)
-Predicted Label: ('Incompetent',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Traitor']
+Predicted Fine-Grained Roles: ['Incompetent']
 
 Article ID: EN_CC_100012.txt
 Entity Mention: Bill Gates-
-True Label: ('Conspirator',)
-Predicted Label: ('Deceiver',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Conspirator']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_103732.txt
 Entity Mention: Zelensky
-True Label: ('Incompetent',)
-Predicted Label: ('Conspirator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_CC_100136.txt
 Entity Mention: Daily Stormer
-True Label: ('Bigot',)
-Predicted Label: ('Deceiver',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Bigot']
+Predicted Fine-Grained Roles: ['Conspirator']
+
+Article ID: EN_UA_103403.txt
+Entity Mention: Moscow
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Instigator']
+Predicted Fine-Grained Roles: ['Incompetent']
 
 Article ID: EN_UA_013727.txt
 Entity Mention: Ukraine
-True Label: ('Victim',)
-Predicted Label: ('Tyrant',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Incompetent']
+
+Article ID: EN_UA_002416.txt
+Entity Mention: Meta's
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_103517.txt
 Entity Mention: Putin
-True Label: ('Tyrant',)
-Predicted Label: ('Guardian',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Tyrant']
+Predicted Fine-Grained Roles: ['Incompetent']
 
 Article ID: EN_UA_013257.txt
 Entity Mention: Russia
-True Label: ('Virtuous',)
-Predicted Label: ('Guardian',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Virtuous']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_015962.txt
 Entity Mention: Vyacheslav Gladkov
-True Label: ('Guardian',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Guardian']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_025652.txt
 Entity Mention: the West
-True Label: ('Instigator',)
-Predicted Label: ('Virtuous',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Instigator']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_CC_100076.txt
 Entity Mention: Reuters
-True Label: ('Incompetent',)
-Predicted Label: ('Scapegoat',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Deceiver']
+
+Article ID: EN_UA_013617.txt
+Entity Mention: China
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Virtuous']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_103011.txt
 Entity Mention: BP
-True Label: ('Corrupt',)
-Predicted Label: ('Guardian',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Corrupt']
+Predicted Fine-Grained Roles: ['Instigator']
 
 Article ID: EN_UA_024847.txt
 Entity Mention: United States
-True Label: ('Conspirator', 'Saboteur')
-Predicted Label: ('Conspirator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Conspirator', 'Saboteur']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_002531.txt
 Entity Mention: Klitschko
-True Label: ('Martyr',)
-Predicted Label: ('Incompetent',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Martyr']
+Predicted Fine-Grained Roles: ['Conspirator']
 
 Article ID: EN_UA_019640.txt
 Entity Mention: Russia
-True Label: ('Victim',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Deceiver']
+
+Article ID: EN_UA_103995.txt
+Entity Mention: Yahya al-Sinwar
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Instigator']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_027787.txt
 Entity Mention: the United States
-True Label: ('Instigator',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Instigator']
+Predicted Fine-Grained Roles: ['Incompetent']
+
+Article ID: EN_UA_029053.txt
+Entity Mention: Keir Starmer
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_021263.txt
 Entity Mention: Ukraine
-True Label: ('Victim',)
-Predicted Label: ('Instigator',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_027676.txt
 Entity Mention: Putin
-True Label: ('Instigator',)
-Predicted Label: ('Guardian',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Instigator']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_104434.txt
 Entity Mention: Putin
-True Label: ('Instigator',)
-Predicted Label: ('Deceiver',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Instigator']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_103861.txt
 Entity Mention: Chinese
-True Label: ('Spy',)
-Predicted Label: ('Peacemaker',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Spy']
+Predicted Fine-Grained Roles: ['Conspirator']
 
 Article ID: EN_CC_100038.txt
 Entity Mention: the Fed
-True Label: ('Tyrant',)
-Predicted Label: ('Peacemaker',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Tyrant']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_026740.txt
 Entity Mention: Palestinians
-True Label: ('Victim',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Conspirator']
 
 Article ID: EN_UA_026740.txt
 Entity Mention: South Africa
-True Label: ('Peacemaker',)
-Predicted Label: ('Instigator',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Peacemaker']
+Predicted Fine-Grained Roles: ['Tyrant']
 
 Article ID: EN_UA_024050.txt
 Entity Mention: Ukraine
-True Label: ('Incompetent',)
-Predicted Label: ('Instigator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Conspirator']
 
 Article ID: EN_UA_100688.txt
 Entity Mention: Kremlin
-True Label: ('Instigator',)
-Predicted Label: ('Victim',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Instigator']
+Predicted Fine-Grained Roles: ['Conspirator']
 
 Article ID: EN_UA_021263.txt
 Entity Mention: Israel
-True Label: ('Victim',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_029053.txt
 Entity Mention: Ukraine
-True Label: ('Victim',)
-Predicted Label: ('Foreign Adversary',)
-
-Article ID: EN_UA_010909.txt
-Entity Mention: John Kerry
-True Label: ('Instigator',)
-Predicted Label: ('Tyrant',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_CC_100012.txt
 Entity Mention: Dr. Carol Baker
-True Label: ('Conspirator',)
-Predicted Label: ('Incompetent',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Conspirator']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_008072.txt
 Entity Mention: Putin
-True Label: ('Incompetent',)
-Predicted Label: ('Peacemaker',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Instigator']
+
+Article ID: EN_UA_013617.txt
+Entity Mention: Iran
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Virtuous']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_026697.txt
 Entity Mention: Jourova
-True Label: ('Corrupt',)
-Predicted Label: ('Conspirator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Corrupt']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_004616.txt
 Entity Mention: Russians
-True Label: ('Instigator',)
-Predicted Label: ('Underdog',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Instigator']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_002531.txt
 Entity Mention: Russian forces
-True Label: ('Saboteur',)
-Predicted Label: ('Instigator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Saboteur']
+Predicted Fine-Grained Roles: ['Incompetent']
+
+Article ID: EN_UA_022051.txt
+Entity Mention: Kiev
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Foreign Adversary']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_013257.txt
 Entity Mention: Western countries
-True Label: ('Saboteur',)
-Predicted Label: ('Guardian',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Saboteur']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_008586.txt
 Entity Mention: US
-True Label: ('Tyrant',)
-Predicted Label: ('Conspirator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Tyrant']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_012611.txt
 Entity Mention: Norway
-True Label: ('Conspirator',)
-Predicted Label: ('Saboteur',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Conspirator']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_024050.txt
 Entity Mention: German generals
-True Label: ('Incompetent',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Incompetent']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_UA_100411.txt
 Entity Mention: Blinken
-True Label: ('Deceiver',)
-Predicted Label: ('Virtuous',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Deceiver']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_027879.txt
 Entity Mention: Russia
-True Label: ('Guardian',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Guardian']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 
 Article ID: EN_CC_100005.txt
 Entity Mention: COP27
-True Label: ('Corrupt',)
-Predicted Label: ('Deceiver',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Corrupt']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_025165.txt
 Entity Mention: Kiev
-True Label: ('Underdog',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Underdog']
+Predicted Fine-Grained Roles: ['Incompetent']
+
+Article ID: EN_UA_002531.txt
+Entity Mention: Klitschko
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Virtuous']
+Predicted Fine-Grained Roles: ['Conspirator']
 
 Article ID: EN_UA_025764.txt
 Entity Mention: Russia
-True Label: ('Foreign Adversary',)
-Predicted Label: ('Instigator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Foreign Adversary']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_002531.txt
 Entity Mention: Russian invaders
-True Label: ('Terrorist',)
-Predicted Label: ('Saboteur',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Terrorist']
+Predicted Fine-Grained Roles: ['Tyrant']
+
+Article ID: EN_UA_002531.txt
+Entity Mention: Russian military
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Instigator']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_000923.txt
 Entity Mention: Britain
-True Label: ('Virtuous',)
-Predicted Label: ('Guardian',)
+True Main Role: ('Protagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Virtuous']
+Predicted Fine-Grained Roles: ['Guardian']
 
 Article ID: EN_UA_024847.txt
 Entity Mention: Ukraine
-True Label: ('Conspirator', 'Saboteur')
-Predicted Label: ('Saboteur',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Conspirator', 'Saboteur']
+Predicted Fine-Grained Roles: ['Tyrant']
+
+Article ID: EN_UA_008586.txt
+Entity Mention: Brussels
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Tyrant']
+Predicted Fine-Grained Roles: ['Conspirator']
+
+Article ID: EN_UA_027676.txt
+Entity Mention: North Korea
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Foreign Adversary']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_104859.txt
 Entity Mention: GUR
-True Label: ('Terrorist',)
-Predicted Label: ('Conspirator',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Terrorist']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_000104.txt
 Entity Mention: Ukraine
-True Label: ('Victim',)
-Predicted Label: ('Foreign Adversary',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Victim']
+Predicted Fine-Grained Roles: ['Incompetent']
 
 Article ID: EN_UA_019640.txt
 Entity Mention: West
-True Label: ('Foreign Adversary',)
-Predicted Label: ('Guardian',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Protagonist',)
+True Fine-Grained Roles: ['Foreign Adversary']
+Predicted Fine-Grained Roles: ['Guardian']
+
+Article ID: EN_UA_029155.txt
+Entity Mention: US Navy
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Saboteur']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_102990.txt
 Entity Mention: Russia
-True Label: ('Scapegoat',)
-Predicted Label: ('Saboteur',)
+True Main Role: ('Innocent',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Scapegoat']
+Predicted Fine-Grained Roles: ['Deceiver']
 
 Article ID: EN_UA_026142.txt
 Entity Mention: Zionist
-True Label: ('Bigot',)
-Predicted Label: ('Incompetent',)
+True Main Role: ('Antagonist',)
+Predicted Main Role: ('Antagonist',)
+True Fine-Grained Roles: ['Bigot']
+Predicted Fine-Grained Roles: ['Foreign Adversary']
 

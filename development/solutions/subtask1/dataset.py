@@ -2,25 +2,36 @@ from torch.utils.data import Dataset
 import torch
 
 class RoleDataset(Dataset):
-    def __init__(self, contexts, labels, tokenizer, max_len=512):
+    def __init__(self, contexts, main_labels=None, fine_labels=None, tokenizer=None):
+        """
+        Args:
+            contexts (list): List of contexts (entity mention surroundings) for each instance.
+            main_labels (list, optional): List of main role labels.
+            fine_labels (list, optional): List of fine-grained role labels.
+            tokenizer (transformers.Tokenizer, optional): Tokenizer used to encode the context.
+        """
         self.contexts = contexts
-        self.labels = labels
+        self.main_labels = main_labels
+        self.fine_labels = fine_labels
         self.tokenizer = tokenizer
-        self.max_len = max_len
 
     def __len__(self):
         return len(self.contexts)
 
     def __getitem__(self, idx):
-        encodings = self.tokenizer(
+        encoding = self.tokenizer(
             self.contexts[idx],
-            max_length=self.max_len,
-            truncation=True,
             padding="max_length",
-            return_tensors="pt",
+            truncation=True,
+            max_length=512,
+            return_tensors="pt"
         )
-        return {
-            "input_ids": encodings["input_ids"].squeeze(),
-            "attention_mask": encodings["attention_mask"].squeeze(),
-            "labels": torch.tensor(self.labels[idx], dtype=torch.float),
-        }
+
+        item = {key: val.squeeze(0) for key, val in encoding.items()}
+
+        if self.main_labels is not None:
+            item["main_labels"] = torch.tensor(self.main_labels[idx], dtype=torch.long)
+        if self.fine_labels is not None:
+            item["fine_labels"] = torch.tensor(self.fine_labels[idx], dtype=torch.float)
+            
+        return item
